@@ -1,0 +1,11 @@
+{% extends "goals/base.html" %} {% load static %}{% block title %} Goals
+{% endblock%} {% block content%}
+<div class="container">
+  <h1>Goals</h1>
+  <ul>
+    {% for goal in goals %}
+    <li>{{ goal.title }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %} {% block jsfiles %} {% endblock jsfiles %}

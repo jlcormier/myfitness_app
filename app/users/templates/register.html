@@ -1,0 +1,134 @@
+{% extends "goals/base.html" %}
+{% load static %}
+{% block title %} Register {% endblock%}
+{% block content%}
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Profile</li>
+      </ol>
+      <h2>Profile</h2>
+      <hr />
+    </div>
+  </div>
+  <div class="row row-content">
+    <form method="post" class="form-group">
+      <div class="form-group row">
+        <label for="username" class="col-md-4 col-form-label">Username</label>
+        <div class="col-md-8">
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            placeholder="Username"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-md-4 col-form-label">Password</label>
+        <div class="col-md-8">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-md-4 col-form-label"
+            >Eamil</label>
+          <div class="col-md-8"
+          >
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+        <div class="form-group row">
+        <label for="firstname" class="col-md-4 col-form-label"
+          >First Name</label
+        >
+        <div class="col-md-8">
+          <input
+            type="text"
+            class="form-control"
+            id="firstname"
+            name="firstname"
+            placeholder="First Name"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="age" class="col-md-4 col-form-label">Age</label>
+        <div class="col-md-8">
+          <input
+            type="text"
+            class="form-control"
+            id="age"
+            name="age"
+            placeholder="Age"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="gender" class="col-md-4 col-form-label">Gender</label>
+        <div class="col-md-8">
+          <select
+            name="gender"
+            class="form-select"
+            id="gender"
+            aria-label="Gender select example">
+              <option selected>Gender</option>
+              {% for key, value in user.GENDER_CHOICES %}
+                <option value="{{ key }}"
+                  {% if user.gender == key %}selected{% endif %}>{{ value }}
+                </option>
+              {% endfor %}
+          </select>
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="city" class="col-md-4 col-form-label">City</label>
+        <div class="col-md-8">
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="city"
+            placeholder="City"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="zip" class="col-md-4 col-form-label">Zip Code</label>
+        <div class="col-md-8">
+          <input
+            type="text"
+            class="form-control"
+            id="zip"
+            name="zip"
+            placeholder="Zip Code"
+          />
+        </div>
+      </div>
+    </div>
+      <div class="form-group row">
+        <div class="offset-md-4 col-md-8">
+          <button type="submit" class="btn btn-primary" value="Register">
+            Register
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %} {% block jsfiles %} {% endblock jsfiles %}
